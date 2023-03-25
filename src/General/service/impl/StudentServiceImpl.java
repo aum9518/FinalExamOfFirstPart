@@ -8,9 +8,10 @@ import General.service.StudentService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StudentServiceImpl implements StudentService {
-    Database database = new Database();
+    Database database = new Database(new ArrayList<>(),new ArrayList<>());
     @Override
     public String addStudent(Student student) {
 
@@ -48,27 +49,29 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<Student> filterByGender() {
-        for (Student s:database.getStudents()) {
-            if (s.getGender().equals(Gender.MALE)){
+      /*  for (Student s:database.getStudents()) {
+            *//*if (s.getGender().equals(Gender.MALE)){
                 List<Student>boys = new ArrayList<>();
                 boys.add(s);
                return boys;
-            }
+            }*//*
             if (s.getGender().equals(Gender.FEMALE)){
                 List<Student>girls = new ArrayList<>();
                 girls.add(s);
                 return girls;
             }
-        }
+        }*/
+        System.out.println("Boys: "+database.getStudents().stream().filter(x -> x.getGender().equals(Gender.MALE)).collect(Collectors.toList()));
+        System.out.println("Girls: "+database.getStudents().stream().filter(x -> x.getGender().equals(Gender.FEMALE)).collect(Collectors.toList()));
         return null;
     }
 
     @Override
     public void deleteStudentById(int id) {
-        for (Student s:database.getStudents()) {
-            if (s.getId()==id){
-                database.getStudents().remove(s);
-            }
+        for (int i = 0; i < database.getStudents().size(); i++) {
+            if (database.getStudents().get(i).getId()==id){
+                database.getStudents().remove(database.getStudents().get(i));
+        }
         }
 
     }

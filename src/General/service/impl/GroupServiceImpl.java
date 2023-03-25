@@ -8,7 +8,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class GroupServiceImpl implements GroupService {
-    Database database = new Database();
+    Database database = new Database(new ArrayList<>(),new ArrayList<>());
     @Override
     public String addNewGroup(Group group) {
        /* Group group1 = new Group();
@@ -27,43 +27,57 @@ public class GroupServiceImpl implements GroupService {
 
     @Override
     public String getGroupById(int id) {
-        List<Database>databases = new ArrayList<>();
-        database.getGroups().stream().toList().forEach(x-> x.getId());
+      Optional<Group>group = database.getGroups().stream().filter(x-> x.getId()==id).findFirst();
 
-        return null;
+      if (group.isEmpty()){
+          return "Not found";
+      }else {
+          return group.toString();
+      }
+
     }
 
     @Override
     public List<Group> getAllGroups() {
-        List<Group>list = database.getGroups().stream().toList();
-        return list;
+        return   database.getGroups().stream().toList();
+
     }
 
     @Override
     public String updateGroupName(int id, String groupName) {
-        return null;
+        database.getGroups().stream().filter(x-> x.getId()==id)
+                .toList().get(id-1).setName(groupName);
+        return "Updated!";
     }
 
     @Override
     public List<Group> filterByYear(int year, String ascDesc) {
+        if (ascDesc.equals("asc")){
+          List<Group>list=  database.getGroups().stream().filter(x-> x.getYear()>year).toList();
+            return list;
+        } else if (ascDesc.equals("desc")) {
+            List<Group>list1=database.getGroups().stream().filter(a->a.getYear()<year).toList();
+            return list1;
+        }
         return null;
     }
 
     @Override
     public List<Group> sortGroupByYear(String ascDesc) {
-        List<Group>groups = database.getGroups().stream().sorted(Comparator.comparing(Group::getYear))
-                .collect(Collectors.toList());
-        return groups;
+      if (ascDesc.equals("asc")){
+          List<Group>list = database.getGroups().stream().sorted(Comparator.comparing(Group::getYear)).toList();
+          return list;
+      } else if (ascDesc.equals("desc")) {
+          List<Group>list1 = database.getGroups().stream().sorted(Comparator.comparing(Group::getYear).reversed()).toList();
+          return list1;
+      }
+        return null;
     }
 
     @Override
     public void deleteGroupById(int id) {
-        List<Group>groups = database.getGroups().stream().collect(Collectors.toList());
-        for (Group g:groups) {
-            if (g.getId()==id){
-                groups.remove(g);
-            }
-        }
+        System.out.println(database.getGroups().stream().filter(x -> x.getId() != id)
+                .collect(Collectors.toList()));
 
     }
 }

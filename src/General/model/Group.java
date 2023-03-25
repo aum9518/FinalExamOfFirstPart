@@ -1,6 +1,9 @@
 package General.model;
 
-public class Group {
+import javax.print.DocFlavor;
+import java.util.Comparator;
+
+public class Group  {
     private int id;
     private String name;
     private String description;
@@ -57,4 +60,5 @@ public class Group {
 
     public Group() {
     }
+
 }

@@ -9,6 +9,7 @@ public class Database {
     private List<Group>groups;
     private List<Student>students;
 
+
     public List<Group> getGroups() {
         return groups;
     }

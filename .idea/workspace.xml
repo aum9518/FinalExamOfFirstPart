@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d189a790-c723-4050-b9d0-c13a5643bf1e" name="Changes" comment="">
+    <list default="true" id="d189a790-c723-4050-b9d0-c13a5643bf1e" name="Changes" comment="add Task">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/General/Enum/Gender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/General/Enum/Gender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/General/db/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/General/db/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/General/model/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/General/model/Group.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/General/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/General/model/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/General/service/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/General/service/GroupService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/General/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/General/service/StudentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/General/service/impl/GroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/General/service/impl/GroupServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/General/service/impl/StudentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/General/service/impl/StudentServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
@@ -49,6 +46,20 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="FinalExamOfFirstPart" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -58,6 +69,18 @@
       <option name="presentableId" value="Default" />
       <updated>1679656313106</updated>
     </task>
+    <task id="LOCAL-00001" summary="add Task">
+      <created>1679663323928</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679663323929</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add Task" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Task" />
   </component>
 </project>
